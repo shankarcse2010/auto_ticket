@@ -2,11 +2,11 @@ const imageUpload = document.getElementById('imageUpload')
 const video = document.getElementById('video')
 let faceMatcher;
 Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('./auto_ticket/models'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('./auto_ticket/models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('./auto_ticket/models'),
-  faceapi.nets.ssdMobilenetv1.loadFromUri('./auto_ticket/models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('./auto_ticket/models')
+  faceapi.nets.tinyFaceDetector.loadFromUri('auto_ticket/models'),
+  faceapi.nets.faceRecognitionNet.loadFromUri('auto_ticket/models'),
+  faceapi.nets.faceLandmark68Net.loadFromUri('auto_ticket/models'),
+  faceapi.nets.ssdMobilenetv1.loadFromUri('auto_ticket/models'),
+  faceapi.nets.faceExpressionNet.loadFromUri('auto_ticket/models')
 ]).then(start)
 
 async function start() {
