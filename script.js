@@ -2,11 +2,11 @@ const imageUpload = document.getElementById('imageUpload')
 const video = document.getElementById('video')
 let faceMatcher;
 Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('./models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('./models'),
-  faceapi.nets.ssdMobilenetv1.loadFromUri('./models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('./models')
+  faceapi.nets.tinyFaceDetector.loadFromUri('./auto_ticket/models'),
+  faceapi.nets.faceRecognitionNet.loadFromUri('./auto_ticket/models'),
+  faceapi.nets.faceLandmark68Net.loadFromUri('./auto_ticket/models'),
+  faceapi.nets.ssdMobilenetv1.loadFromUri('./auto_ticket/models'),
+  faceapi.nets.faceExpressionNet.loadFromUri('./auto_ticket/models')
 ]).then(start)
 
 async function start() {
@@ -53,7 +53,7 @@ function loadLabeledImages() {
     labels.map(async label => {
       const descriptions = []
       for (let i = 1; i <= 2; i++) {
-        const img = await faceapi.fetchImage(`${window.location.origin}/labeled_images/${label}/${i}.jpg`)
+        const img = await faceapi.fetchImage(`${window.location.origin}/auto_ticket/labeled_images/${label}/${i}.jpg`)
         const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
         descriptions.push(detections.descriptor)
       }
