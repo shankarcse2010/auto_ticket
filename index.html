@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
   <script defer src="face-api.min.js"></script>
   <script defer src="script.js"></script>
   <title>Face Recognition</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column
-    }
-
-    canvas {  
-      position: absolute;
-    }
-  </style>
 </head>
+
 <body>
   <div class="loader">Loading....</div>
-  <video id="video" width="720" height="560" autoplay muted></video>
-  <input type="file" id="imageUpload">
+  <div class="video-wrapper">
+    <video id="video" width="720" height="560" autoplay muted></video>
+  </div>
+  <div class="form-wrapper">
+    <button class="btn btn-primary take-photo">Take photo</button>
+    <input type="text" class="form-control" id="user-name" placeholder="Please Enter your name">
+    <button class="btn btn-info save">Save details</button>
+    <button class="btn btn-danger clear">Clear photo</button>
+  </div>
+  <div class="img-wrapper"></div>
 </body>
+
 </html>
